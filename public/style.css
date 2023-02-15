@@ -1,0 +1,117 @@
+:root {
+	--yellow: #ffec3c;
+	--header-bg-color: #191923;
+	--main-bg-color: #1e1e29;
+	--text-color: #ffffff;
+	--hover-color: #fef698;
+	--nav-menu-color: #86868a;
+	--bg-tooltip: #fef698;
+	--font-color-tooltip: #000;
+	--skill-bar-bg: rgba(86, 91, 45, 0.1);
+	--resume-color: #86868a;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-family: 'Kanit', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: var(--main-bg-color);
+	color: var(--yellow);
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+#new-task-form {
+	display: flex;
+}
+
+input,
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#title {
+	flex: 1 1 0%;
+	background-color: var(--header-bg-color);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	font-size: 1.25rem;
+	color: var(--nav-menu-color);
+}
+
+#new-task-submit {
+	color: var(--yellow);
+	font-size: 1.25rem;
+	font-weight: 700;
+	border: 1px solid var(--bg-tooltip);
+	border-radius: 1rem;
+	background-color: var(--header-bg-color);
+	cursor: pointer;
+}
+
+main {
+	flex: 1 1 0%;
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	background-color: var(--header-bg-color);
+	color: var(--text-color);
+	font-size: 1.125rem;
+	width: 100%;
+	display: block;
+	text-transform: uppercase;
+}
+
+#tasks .actions {
+	display: flex;
+	justify-content: flex-end;
+	transform: translateY(-60px);
+}
+
+.actions a {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--yellow);
+}

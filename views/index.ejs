@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Kanit:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>To-Do App</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            To-Do App
+        </h1>
+
+        <form action="/" method="POST" id="new-task-form">
+            <input type="text" id="title" name="todoValue" placeholder="Would you like to add a task?">
+            <input type="submit" id="new-task-submit" value="Add Task">
+        </form>
+    </header>
+
+    <main>
+        <section class="task-list">
+
+            <% if (data) { %>
+                <% data.forEach(todoValue=> { %>
+                    <div id="tasks">
+                        <div class="task">
+                            <%= todoValue.todo%>
+                        </div>
+                        <div class="actions">
+                            <a class="edit">Edit</a>
+                            <a class="delete <%= todoValue.id%>">Delete</a>
+                        </div>
+                    </div>
+                    <%})%>
+                        <%}%>
+
+        </section>
+    </main>
+
+    <script>
+        const deleteButton = document.querySelectorAll(".delete");
+
+        deleteButton.forEach((button, i) => {
+            button.addEventListener("click", () => {
+                const endPoint = `/${button.classList[1]}`;
+                fetch(endPoint, {
+                    method: "DELETE"
+                });
+                window.location.href = "/";
+
+            });
+        })
+
+    </script>
+
+
+</body>
+
+</html>
